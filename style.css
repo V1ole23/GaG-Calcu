@@ -1,0 +1,200 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  padding: 20px;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  color: white;
+}
+
+form {
+  background: #333;
+  padding: 20px;
+  margin: auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.section-header {
+  font-weight: bold;
+  margin: 15px 0 5px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+input,
+select {
+  width: 100%;
+  margin-top: 5px;
+  box-sizing: border-box;
+  background: #555;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input.readonly::placeholder {
+  color: #777;
+}
+
+.readonly {
+  background: #444;
+}
+
+.dual-input {
+  display: flex;
+  gap: 10px;
+}
+
+.dual-input input {
+  width: 50%;
+}
+
+.toggle-button {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.toggle-button:hover {
+  background: #666;
+}
+
+.grid {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.crop-card,
+.mutation-card,
+.growth-card {
+  background: #444;
+  border: 1px solid #666;
+  padding: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-label {
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.9rem;
+  text-align: center;
+  min-width: max-content;
+}
+
+.card-label.selected {
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  background-color: transparent !important;
+  color: white;
+}
+
+.card-label:hover {
+  text-decoration: underline;
+  text-decoration-color: #aaa;
+}
+
+.growth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Warna khusus untuk Growth Mutation */
+.card-label.gold {
+  color: gold;
+}
+
+@keyframes rainbow-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.card-label.rainbow {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 100%;
+  animation: rainbow-move 6s ease-in-out infinite alternate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+
+
+.card-label.white {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 15px;
+  }
+
+  input,
+  select {
+    font-size: 0.9rem;
+  }
+
+  .card-label {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+
+  .dual-input {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .dual-input input {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .growth-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#autoTotalPrice,
+#autoWeight,
+#manualTotalPrice,
+#manualWeight {
+  font-size: 1.1rem;
+  padding: 10px;
+  height: 45px;
+}
